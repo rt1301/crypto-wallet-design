@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# Crypto Wallet
+A frontend design created using React.js, TailwindCSS and Mantine.js for a Crypto Wallet Desktop Applications
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Screenshots
+![image](https://user-images.githubusercontent.com/63252510/179165937-473c583f-5df4-4f20-8c89-3fe63c30d610.png)
+<br>
+![image](https://user-images.githubusercontent.com/63252510/179165994-98e0a73b-14c6-43aa-826b-40716112583b.png)
+<br>
+![image](https://user-images.githubusercontent.com/63252510/179166055-6add4c2a-b5d5-420d-bb93-4ecd6bd2104d.png)
+<br>
+![image](https://user-images.githubusercontent.com/63252510/179166082-bc98b22f-f080-4328-b712-2d3de58fd5a8.png)
 
 ## Available Scripts
 
