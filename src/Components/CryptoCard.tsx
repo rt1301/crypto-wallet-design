@@ -56,7 +56,7 @@ export default function CryptoCard({ coinName, sym, price, quantity, open, setMo
                             {coinName.toUpperCase()}</div>
                     </Grid.Col>
                     <Grid.Col span={3}>
-                        <div className='text-primaryText'>{sym} {quantity}</div>
+                        <div className='text-primaryText'>{sym} {quantity.toPrecision(5)}</div>
                     </Grid.Col>
                     <Grid.Col span={3}>
                         <div className='text-primaryText'>USD {price}</div>

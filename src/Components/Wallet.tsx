@@ -5,9 +5,11 @@ import { BsArrowDownShort, BsArrowDownUp } from 'react-icons/bs'
 import CryptoCard from './CryptoCard'
 import data from './data.json'
 import ModalContent from './ModalContent'
-type Props = {}
+type Props = {
+    walletNo:number
+}
 
-export default function Wallet({ }: Props) {
+export default function Wallet({ walletNo }: Props) {
     const [cryptoData, setCryptoData] = useState(data);
     const [modalOpen,setModalOpen] = useState(Array.from(data,x=>false));
     const [modalId, setModalId] = useState(-1);
@@ -20,7 +22,7 @@ export default function Wallet({ }: Props) {
         <div id="wallet_page">
             <Container size="xl">
                 <div className='flex text-lightGold w-full justify-between'>
-                    <h3 className='font-bold text-lg' style={{ color: "#C78D4E" }}>Wallet 1</h3>
+                    <h3 className='font-bold text-lg' style={{ color: "#C78D4E" }}>Wallet {walletNo}</h3>
                     <Button className='text-lightGold' style={{ backgroundColor: "#191E26" }}>&#43; Add Coin</Button>
                 </div>
                 <Grid className='my-4 text-primaryText drop-shadow-md border border-gray-600 rounded-sm p-2'>
@@ -67,6 +69,7 @@ export default function Wallet({ }: Props) {
             </Container>
             <Modal
                 opened={modalOpen[modalId]}
+                withCloseButton={false}
                 onClose={() => handleCloseModal()}
                 title="Receive"
                 styles={{

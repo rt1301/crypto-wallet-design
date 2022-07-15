@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Sidebar from './Sidebar'
 import { Grid } from '@mantine/core';
 import { BsCircleHalf } from 'react-icons/bs'
@@ -6,6 +6,8 @@ import { AiOutlineLock, AiOutlineCheckCircle } from 'react-icons/ai'
 
 import Wallet from './Wallet'
 export default function Mainpage() {
+    const [walletNo, setWalletNo] = useState(1);
+    
     return (
         <div id='mainpage' className='bg-bgColor min-h-screen h-full w-full'>
             <div className='h-[50px] border-b border-b-slate-500 flex items-center'>
@@ -20,7 +22,7 @@ export default function Mainpage() {
                     <path d="M115.993 11.4972C115.092 11.2622 114.25 10.8414 113.521 10.2617C112.792 9.68206 112.192 8.95636 111.76 8.13121C111.388 7.41497 111.239 6.60376 111.333 5.8022C111.237 5.00509 111.386 4.1977 111.76 3.4872C112.402 2.33213 113.371 1.39275 114.546 0.787201C116.054 0.072201 116.891 0.0111987 123.622 0.0411987L129.911 0.0861969L129.956 1.8672C129.947 2.46903 129.982 3.07073 130.063 3.66721C130.108 3.66721 131.25 2.8442 132.636 1.8392L135.136 0.012207H137.736C139.716 0.012207 140.336 0.058204 140.336 0.212204C139.143 1.24557 137.898 2.21653 136.605 3.1212C134.549 4.6142 132.844 5.8772 132.813 5.9382C132.782 5.9992 134.473 7.2332 136.574 8.6942C138.674 10.1712 140.411 11.4502 140.456 11.5562C140.502 11.6932 139.878 11.7392 137.792 11.7392H135.093L132.626 9.9882C131.271 9.02921 130.126 8.2372 130.083 8.2372C129.984 8.80529 129.944 9.3819 129.961 9.95821L129.915 11.6632L128.103 11.7082C126.748 11.7392 126.261 11.6932 126.154 11.5562C126.055 11.1221 126.015 10.6769 126.033 10.2322V9.0892L125.013 10.4132L123.978 11.7382L120.399 11.7232C118.926 11.8014 117.45 11.7257 115.993 11.4972ZM126.028 4.55321V0.564209L125.008 1.8882L123.973 3.2132H120.912C117.44 3.2132 116.712 3.3502 115.872 4.1572C115.575 4.46637 115.346 4.83517 115.202 5.2392C115.078 5.71387 115.092 6.21414 115.243 6.68089C115.395 7.14764 115.676 7.56137 116.055 7.8732C116.969 8.4672 117.455 8.5272 121.811 8.5432H126.029V4.55321H126.028Z" fill="white" />
                 </svg>
             </div>
-            <Sidebar></Sidebar>
+            <Sidebar setWalletNo={setWalletNo}></Sidebar>
             <Grid className='ml-[250px]' style={{width:"calc(100% - 250px)"}}>
                 <Grid.Col offset={10} span={2}>
                     <div id="color-scheme" className='flex w-[245px] mr-10 my-5 justify-between float-right text-white'>
@@ -33,7 +35,7 @@ export default function Mainpage() {
                     </div>
                 </Grid.Col>
                 <Grid.Col span={12}>
-                    <Wallet></Wallet>
+                    <Wallet walletNo = {walletNo}></Wallet>
                 </Grid.Col>
             </Grid>
         </div>
